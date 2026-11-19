@@ -3,12 +3,14 @@ import '@fontsource-variable/manrope';
 import { App } from './App';
 import { content, getLocale } from './content';
 import './style.css';
+import { WebEyeBar } from './WebEyeBar';
 
 const locale = getLocale(window.location.pathname);
 const root = document.getElementById('root');
 if (!root) throw new Error('Missing React root');
 
-const app = <App locale={locale} />;
+const isWebApp = window.location.pathname.replace(/\\/g, '/').startsWith(`${import.meta.env.BASE_URL}app`);
+const app = isWebApp ? <WebEyeBar /> : <App locale={locale} />;
 if (root.firstElementChild) {
   hydrateRoot(root, app);
 } else {
