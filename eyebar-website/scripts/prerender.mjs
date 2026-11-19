@@ -58,13 +58,6 @@ try {
     await writeFile(join(directory, 'index.html'), html);
   }
 
-  // A real standalone entry point for the installed iPhone/Android web app.
-  const appDir = join(dist, 'app');
-  await mkdir(appDir, { recursive: true });
-  const appHtml = template
-    .replace('<!--app-html-->', '')
-    .replace('<title>EyeBar — твой рабочий стол. По-новому.</title>', '<title>EyeBar Web</title>');
-  await writeFile(join(appDir, 'index.html'), appHtml);
 
   const urlSet = locales.map((locale) => `  <url><loc>${pageUrl(locale)}</loc></url>`).join('\n');
   await writeFile(join(dist, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urlSet}\n</urlset>\n`);
