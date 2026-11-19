@@ -1,9 +1,9 @@
 {
-  "id": "/eyebar-website/",
+  "id": "/eyebar-website/app/",
   "name": "EyeBar — официальный сайт",
   "short_name": "EyeBar",
   "description": "EyeBar для Windows 10/11 — официальный сайт",
-  "start_url": "/eyebar-website/",
+  "start_url": "/eyebar-website/app/",
   "scope": "/eyebar-website/",
   "display": "standalone",
   "background_color": "#101116",
