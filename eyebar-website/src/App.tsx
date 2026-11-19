@@ -110,6 +110,7 @@ function Hero({ copy }: { copy: Copy }) {
           <div className="hero-actions">
             <DownloadLink>{copy.download}</DownloadLink>
             <a className="button button-secondary" href="#features">{copy.nav.features}</a>
+            <a className="button button-secondary" href={`${base}app/`}>{copy.localeName === "Русский" ? "Открыть EyeBar Web" : "Open EyeBar Web"}</a>
           </div>
         </div>
         <figure className="hero-art">
