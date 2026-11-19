@@ -22,21 +22,13 @@ npm run preview
 
 ## Публикация на GitHub Pages
 
-1. Распакуйте ZIP, откройте каталог `eyebar-website` и создайте на GitHub отдельный публичный репозиторий `Opex149/eyebar-website`. Оставьте его пустым при создании.
-2. Выполните команды ниже из папки проекта. Они добавят исходники, `package-lock.json` и скрытую папку `.github` с рабочим процессом публикации.
+Этот репозиторий должен называться `Opex149/eyebar-website`. Проект расположен во вложенной папке `eyebar-website`, а workflow `.github/workflows/deploy.yml` — в корне репозитория.
 
-   ```sh
-   git init -b main
-   git add .
-   git commit -m "Add EyeBar website"
-   git remote add origin https://github.com/Opex149/eyebar-website.git
-   git push -u origin main
-   ```
+1. В репозитории откройте **Settings → Pages → Build and deployment → Source** и выберите **GitHub Actions**.
+2. Отправьте изменения в ветку `main`. Если нужен ручной запуск, откройте **Actions → Deploy EyeBar to GitHub Pages → Run workflow** и выберите `main`.
+3. Проверьте результат на вкладке **Actions**. Workflow выполняет `npm ci` и `npm run build` во вложенной папке и публикует `eyebar-website/dist`.
 
-3. В новом репозитории откройте **Settings → Pages → Build and deployment → Source** и выберите **GitHub Actions**.
-4. На вкладке **Actions** выберите **Deploy site to GitHub Pages** и запустите его через **Run workflow** для ветки `main`. После успешного запуска GitHub покажет адрес в **Settings → Pages**. Следующие обновления ветки `main` запустят публикацию автоматически.
-
-Адрес для этой конфигурации — `https://opex149.github.io/eyebar-website/`. Для другого владельца, имени репозитория или домена обновите `base` в `vite.config.ts`, `siteUrl` в `src/content.ts` и адрес Sitemap в `public/robots.txt`.
+Адрес сайта — `https://opex149.github.io/eyebar-website/`. Для другого владельца, имени репозитория или домена обновите `base` в `vite.config.ts`, `siteUrl` в `src/content.ts` и адрес Sitemap в `public/robots.txt`.
 
 ## Как обновить сайт
 
