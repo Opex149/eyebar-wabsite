@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://opex149.github.io/eyebar-website/sitemap.xml
